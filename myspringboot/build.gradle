@@ -1,0 +1,35 @@
+apply plugin: "java"
+apply plugin: "eclipse"
+apply plugin: "org.springframework.boot"
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+[compileJava, compileTestJava]*.options*.encoding = "UTF-8"
+
+version = "1.0.0.0"
+
+buildscript {
+	repositories {
+		mavenLocal()
+	  maven {url "http://maven.aliyun.com/nexus/content/groups/public/"}
+		mavenCentral()
+	}
+
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.9.RELEASE")
+	}
+}
+
+repositories {
+	mavenLocal()
+	maven {url "http://maven.aliyun.com/nexus/content/groups/public/"}
+	mavenCentral()
+}
+
+dependencies {
+	compile("org.springframework.boot:spring-boot-starter-web:1.5.9.RELEASE")
+  testImplementation 'junit:junit:4.12'
+  testCompile("org.springframework.boot:spring-boot-starter-test")
+}
+
