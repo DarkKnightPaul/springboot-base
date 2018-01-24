@@ -1,2 +1,3 @@
 /myspringboot/bin
 /myspringboot/build
+/myspringboot/*.log
