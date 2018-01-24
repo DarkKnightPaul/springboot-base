@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 
-import junit.framework.Test;
 import top.huhuiyu.myspringboot.entity.JsonMessage;
 import top.huhuiyu.myspringboot.entity.TbTest;
 import top.huhuiyu.myspringboot.model.DemoModel;

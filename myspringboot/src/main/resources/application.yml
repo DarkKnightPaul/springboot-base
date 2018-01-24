@@ -11,9 +11,8 @@ spring:
       enabled: true
   jackson:
     time-zone: GMT+8
-    date-format: yyyy-MM-dd
+    date-format: yyyy-MM-dd HH:mm:ss
 mybatis:
   config-location: classpath:mybatis-config.xml
 server:
   port: 10000
-    
