@@ -10,4 +10,10 @@
   <select id="queryAll_COUNT" resultType="int">
     select count(*) from TbTest
   </select>
+
+  <select id="queryMapping" resultType="TbEmployee">
+    select e.empId,e.empName,d.deptId 'dept.deptId',d.deptName 'dept.deptName'
+    from TbEmployee e
+    inner join TbDept d on e.deptId=d.deptId
+  </select>
 </mapper>

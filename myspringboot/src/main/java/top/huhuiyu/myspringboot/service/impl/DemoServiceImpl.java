@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import top.huhuiyu.myspringboot.entity.TbEmployee;
 import top.huhuiyu.myspringboot.entity.TbTest;
 import top.huhuiyu.myspringboot.mapper.TbTestMapper;
 import top.huhuiyu.myspringboot.service.DemoService;
@@ -19,6 +20,11 @@ public class DemoServiceImpl implements DemoService {
   @Override
   public List<TbTest> queryAll() {
     return tbTestMapper.queryAll();
+  }
+
+  @Override
+  public List<TbEmployee> queryMapping() {
+    return tbTestMapper.queryMapping();
   }
 
 }

@@ -4,9 +4,11 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import top.huhuiyu.myspringboot.entity.TbEmployee;
 import top.huhuiyu.myspringboot.entity.TbTest;
 
 @Mapper
 public interface TbTestMapper {
   List<TbTest> queryAll();
+  List<TbEmployee> queryMapping();
 }

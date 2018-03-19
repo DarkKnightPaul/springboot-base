@@ -58,4 +58,19 @@ public class DemoController {
       return JsonMessage.getFailMessage(e.getMessage());
     }
   }
+
+  @RequestMapping("/demo/queryMapping")
+  @ResponseBody
+  public JsonMessage queryMapping(DemoModel model) {
+    try {
+
+      JsonMessage message = JsonMessage.getSuccessMessage("查询成功");
+      message.getDataMap().put("list", demoService.queryMapping());
+      return message;
+
+    } catch (Exception e) {
+      return JsonMessage.getFailMessage(e.getMessage());
+    }
+  }
+
 }

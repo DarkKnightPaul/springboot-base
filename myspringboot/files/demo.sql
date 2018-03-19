@@ -17,3 +17,28 @@ create table TbTest
 insert into TbTest(tinfo) values('测试信息');
 
 select * from TbTest;
+
+create table TbDept
+(
+	deptId integer auto_increment primary key not null comment '部门编号',
+	deptName varchar(50) unique not null comment '部门名称'
+);
+
+insert into TbDept(deptName) values('测试部门');
+
+select * from TbDept;
+
+create table TbEmployee
+(
+	empId integer auto_increment primary key not null comment '员工编号',
+	empName varchar(50) not null comment '员工姓名',
+	deptId integer not null comment '所属部门',
+	foreign key(deptId) references TbDept(deptId) 
+);
+
+insert into TbEmployee(empName,deptId) values('张三',1);
+insert into TbEmployee(empName,deptId) values('李四',1);
+
+select * from TbEmployee;
+
+
