@@ -18,10 +18,9 @@ import top.huhuiyu.myspringboot.service.DemoService;
 @RestController
 public class DemoController {
 
+  private static final Logger log = LoggerFactory.getLogger(DemoController.class);
   @Autowired
   private DemoService demoService;
-
-  private static final Logger log = LoggerFactory.getLogger(DemoController.class);
 
   @RequestMapping("/")
   public String index() {
