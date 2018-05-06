@@ -2,7 +2,7 @@ package top.huhuiyu.myspringboot.model;
 
 import java.io.Serializable;
 
-import top.huhuiyu.myspringboot.entity.PageBean;
+import top.huhuiyu.myspringboot.util.PageBean;
 
 public abstract class BaseModel implements Serializable {
   private static final long serialVersionUID = -137055849508844216L;

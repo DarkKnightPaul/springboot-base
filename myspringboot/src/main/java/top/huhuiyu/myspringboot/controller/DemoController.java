@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 
-import top.huhuiyu.myspringboot.entity.JsonMessage;
 import top.huhuiyu.myspringboot.entity.TbTest;
 import top.huhuiyu.myspringboot.model.DemoModel;
 import top.huhuiyu.myspringboot.service.DemoService;
+import top.huhuiyu.myspringboot.util.JsonMessage;
 
 @RestController
 public class DemoController {

@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import top.huhuiyu.myspringboot.entity.JsonMessage;
+import top.huhuiyu.myspringboot.util.JsonMessage;
 
 @ControllerAdvice
 @ResponseBody

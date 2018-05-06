@@ -1,4 +1,4 @@
-package top.huhuiyu.myspringboot.entity;
+package top.huhuiyu.myspringboot.util;
 
 import java.io.Serializable;
 import java.util.Date;
