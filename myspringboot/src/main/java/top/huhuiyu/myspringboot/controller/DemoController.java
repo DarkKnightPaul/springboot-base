@@ -72,4 +72,10 @@ public class DemoController {
     }
   }
 
+  @RequestMapping("/demo/error")
+  @ResponseBody
+  public JsonMessage error(DemoModel model) {
+    return JsonMessage.getSuccessMessage("获取tid：" + (model.getTest().getTid() / 100.1));
+  }
+
 }
