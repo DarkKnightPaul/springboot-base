@@ -1,5 +1,8 @@
 package top.huhuiyu.myspringboot.controller;
 
+import javax.imageio.ImageIO;
+import javax.servlet.http.HttpServletResponse;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +16,7 @@ import com.github.pagehelper.PageHelper;
 import top.huhuiyu.myspringboot.entity.TbTest;
 import top.huhuiyu.myspringboot.model.DemoModel;
 import top.huhuiyu.myspringboot.service.DemoService;
+import top.huhuiyu.myspringboot.util.ImageCode;
 import top.huhuiyu.myspringboot.util.JsonMessage;
 
 @RestController
@@ -76,6 +80,12 @@ public class DemoController {
   @ResponseBody
   public JsonMessage error(DemoModel model) {
     return JsonMessage.getSuccessMessage("获取tid：" + (model.getTest().getTid() / 100.1));
+  }
+
+  @RequestMapping("/demo/validate.jpg")
+  public void validateCode(HttpServletResponse response) throws Exception {
+    String code = ImageCode.makeCode();
+    ImageIO.write(ImageCode.makeImage(code), "jpeg", response.getOutputStream());
   }
 
 }
