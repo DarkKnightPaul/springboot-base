@@ -13,8 +13,8 @@ import java.util.Random;
 import javax.imageio.ImageIO;
 
 public class ImageCode {
-  private static final String CODES = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  private static final Font FONT = new Font(null, Font.BOLD, 18);
+  private static final String CODES = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"; //壹贰叁肆伍陆柒捌玖拾
+  private static final Font FONT = new Font(null, Font.BOLD, 28);
   private static final Random RANDOM = new Random();
   private static final int LENGTH = 5;
   private static final int MAX_LENGTH = 10;

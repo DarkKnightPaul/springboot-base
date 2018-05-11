@@ -1,3 +1,4 @@
 /myspringboot/bin
 /myspringboot/build
 /myspringboot/*.log
+/myspringboot/upload

@@ -14,6 +14,7 @@ public class JsonMessage implements Serializable {
 
   private boolean success = false;
   private String message = "操作失败";
+  private int code = 500;
   private Map<String, Object> dataMap = new HashMap<String, Object>();
 
   public Map<String, Object> getDataMap() {
@@ -52,6 +53,14 @@ public class JsonMessage implements Serializable {
     this.message = message;
   }
 
+  public int getCode() {
+    return code;
+  }
+
+  public void setCode(int code) {
+    this.code = code;
+  }
+
   public JsonMessage() {
     this(false, "操作失败");
   }
@@ -62,8 +71,9 @@ public class JsonMessage implements Serializable {
     dataMap.put("nowTimestamp", new Date().getTime());
   }
 
-  public static JsonMessage getJsonMessage(boolean success, String message, Map<String, Object> dataMap) {
+  public static JsonMessage getJsonMessage(int code, boolean success, String message, Map<String, Object> dataMap) {
     JsonMessage jsonMessage = new JsonMessage();
+    jsonMessage.setCode(code);
     jsonMessage.setSuccess(success);
     jsonMessage.setMessage(message);
     if (dataMap != null && !dataMap.isEmpty()) {
@@ -73,20 +83,20 @@ public class JsonMessage implements Serializable {
   }
 
   public static JsonMessage getSuccessMessage(String message) {
-    return JsonMessage.getJsonMessage(true, message, null);
+    return JsonMessage.getJsonMessage(200, true, message, null);
   }
 
   public static JsonMessage getSuccessMessage(String message, Map<String, Object> dataMap) {
-    return JsonMessage.getJsonMessage(true, message, dataMap);
+    return JsonMessage.getJsonMessage(200, true, message, dataMap);
   }
 
   public static JsonMessage getFailMessage(String message) {
-    return JsonMessage.getJsonMessage(false, message, null);
+    return JsonMessage.getJsonMessage(500, false, message, null);
   }
 
   public static JsonMessage getFailMessage(Throwable ex) {
     log.error("程序错误。。。", ex);
-    return JsonMessage.getJsonMessage(false, "服务器忙，请稍后重试。", null);
+    return JsonMessage.getJsonMessage(500, false, "服务器忙，请稍后重试。", null);
   }
 
   @Override
