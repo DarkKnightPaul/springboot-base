@@ -2,3 +2,4 @@
 /myspringboot/build
 /myspringboot/*.log
 /myspringboot/upload
+/myspringboot/.gradle
